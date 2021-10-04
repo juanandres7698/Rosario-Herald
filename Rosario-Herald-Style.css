@@ -1,9 +1,12 @@
 header h1 {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: black;
+    color: white;
+    font-size: 6vw;
 }
 header time {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    font-size: 1vw;
 }
 
 nav a {
@@ -20,19 +23,28 @@ nav a {
 
 .Header-Container {
     text-align: center;
+    background-image: url("https://live.staticflickr.com/4333/36459133251_08ef1db09d_b.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    
+}
+header {
+    background-color: yellowgreen;
 }
 
 section .H-Container {
     background-color: navy;
     text-align: center;
 }
+
+section .H-Container {
+    color: yellowgreen;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+}
 .Container {
     width: 100%;
-    background-image: url('C:\Users\Musi\Desktop\Problematica3\Images\lapacho.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    background-size: contain;
 }
 .First-Article {
     width: 100%;
@@ -131,6 +143,7 @@ section .H-Container {
         display: flex;
         text-align: center;
         background-color: palegreen;
+
     }
     .Nav-Container ul {
         list-style-type: none;

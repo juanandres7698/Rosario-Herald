@@ -1,25 +1,60 @@
-@media(max-width:768px) {
-    .Container {
-        width: 100%;
-    }
-    .First-Article {
-        width: 100%;
-        text-align: center;
-    }
-    .Second-Article {
-        width: 100%;
-        text-align: center;
-    }
-    .Third-Article {
-        width: 100%;
-        text-align: center;
-    }
-    .Container img {
-        width: 70%;
-        justify-content: center;
-    }
+header h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: black;
+}
+header time {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+nav a {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: navy;
+    font-weight: 700;
+}
+.Nav-Container {
+    text-align: center;
+    background-color: palegreen;
+}
+.Nav-Container ul {
+    list-style-type: none;
+}
+.Nav-Container li {
+    display: inline-flex
+}
+.Header-Container {
+    background-image: url('C:\Users\Musi\Desktop\Problematica3\Images\lapacho.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    text-align: center;
+}
+
+section .H-Container {
+    background-color: navy;
+    text-align: center;
+}
+.Container {
+    width: 100%;
+}
+.First-Article {
+    width: 100%;
+    text-align: center;
+}
+.Second-Article {
+    width: 100%;
+    text-align: center;
+}
+.Third-Article {
+    width: 100%;
+    text-align: center;
+}
+.Container img {
+    width: 70%;
+    justify-content: center;
+}
 @media(min-width:768px) and (max-width:1024px) {
     .Container {
         display: flex;
@@ -65,43 +100,4 @@
     .Container img {
         width: 90%;
     }
-}
-
-header h1 {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: black;
-}
-header time {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-nav a {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: navy;
-    font-weight: 700;
-}
-.Nav-Container {
-    text-align: center;
-    background-color: palegreen;
-}
-.Nav-Container ul {
-    list-style-type: none;
-}
-.Nav-Container li {
-    display: inline-flex
-}
-.Header-Container {
-    background-image: url('C:\Users\Musi\Desktop\Problematica3\Images\lapacho.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
-    text-align: center;
-}
-
-section .H-Container {
-    background-color: navy;
-    text-align: center;
 }

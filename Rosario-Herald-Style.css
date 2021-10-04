@@ -13,22 +13,17 @@ nav a {
     color: navy;
     font-weight: 700;
 }
+
 .Nav-Container {
-    text-align: center;
-    background-color: palegreen;
+    display: none;
 }
-.Nav-Container ul {
-    list-style-type: none;
-}
-.Nav-Container li {
-    display: inline-flex
-}
+
 .Header-Container {
     background-image: url('C:\Users\Musi\Desktop\Problematica3\Images\lapacho.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
-    background-size: cover;
+    background-size: contain;
     text-align: center;
 }
 
@@ -55,7 +50,55 @@ section .H-Container {
     width: 70%;
     justify-content: center;
 }
+
+.Mobile-Nav {
+    overflow: hidden;
+    background-color: #333;
+    position: relative;
+  }
+  
+  .Mobile-Nav .burger {
+    display: none;
+  }
+  
+  .Mobile-Nav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+  }
+  
+  .Mobile-Nav a.icon {
+    background: black;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  .Mobile-Nav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+
 @media(min-width:768px) and (max-width:1024px) {
+
+    .Mobile-Nav {
+        display: none;
+    }
+
+    .Nav-Container {
+        text-align: center;
+        background-color: palegreen;
+    }
+    .Nav-Container ul {
+        list-style-type: none;
+    }
+    .Nav-Container li {
+        display: inline-flex
+    }
     .Container {
         display: flex;
         align-items: flex-start;
@@ -80,6 +123,19 @@ section .H-Container {
 }
 
 @media(min-width:1024px) {
+    .Mobile-Nav {
+        display: none;
+    }
+    .Nav-Container {
+        text-align: center;
+        background-color: palegreen;
+    }
+    .Nav-Container ul {
+        list-style-type: none;
+    }
+    .Nav-Container li {
+        display: inline-flex
+    }
     .Container {
         display: flex;
         align-items: flex-start;

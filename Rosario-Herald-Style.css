@@ -19,11 +19,6 @@ nav a {
 }
 
 .Header-Container {
-    background-image: url('C:\Users\Musi\Desktop\Problematica3\Images\lapacho.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    background-size: contain;
     text-align: center;
 }
 
@@ -33,6 +28,11 @@ section .H-Container {
 }
 .Container {
     width: 100%;
+    background-image: url('C:\Users\Musi\Desktop\Problematica3\Images\lapacho.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: contain;
 }
 .First-Article {
     width: 100%;
@@ -90,6 +90,7 @@ section .H-Container {
     }
 
     .Nav-Container {
+        display: flex;
         text-align: center;
         background-color: palegreen;
     }
@@ -127,6 +128,7 @@ section .H-Container {
         display: none;
     }
     .Nav-Container {
+        display: flex;
         text-align: center;
         background-color: palegreen;
     }

@@ -71,6 +71,13 @@ section .H-Container {
 .Container a:visited{
     color:white;
 }
+.News-Tag {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-transform: uppercase;
+    color: navy;
+    font-weight: 700;
+    font-size: 1vw;
+}
 
 main h3 {
     font-size: 6vh;
@@ -270,13 +277,6 @@ main h3 {
     .Container {
         display: flex;
         align-items: center;
-    }
-    .News-Tag {
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        text-transform: uppercase;
-        color: navy;
-        font-weight: 700;
-        font-size: 1vw;
     }
     .First-Article {
         width: 60%;

@@ -152,6 +152,11 @@ main h3 {
         color: navy;
       }
       */
+    
+    main section .Container {
+        display: flex;
+        flex-wrap: wrap;
+    }
     main .First-Article h3 {
         font-size: 4vh;
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -205,6 +210,7 @@ main h3 {
         width: 90%;
     }
 }
+    
 @media(min-width:1024px) {
     /*
     .Nav-Container a {

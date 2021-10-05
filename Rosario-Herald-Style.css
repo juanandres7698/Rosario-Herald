@@ -86,6 +86,9 @@ main h3 {
     background-size: contain;
     background-attachment: fixed;
 }
+.First-Article span {
+    color: white;
+}
 .Second-Article {
     width: 100%;
     text-align: center;
@@ -266,7 +269,14 @@ main h3 {
     }
     .Container {
         display: flex;
-        align-items: flex-start;
+        align-items: center;
+    }
+    .News-Tag {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        text-transform: uppercase;
+        color: navy;
+        font-weight: 700;
+        font-size: 1vw;
     }
     .First-Article {
         width: 60%;

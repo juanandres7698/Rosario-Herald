@@ -16,28 +16,23 @@ nav a {
     color: navy;
     font-weight: 700;
 }
-
 .Nav-Container {
     display: none;
 }
-
 .Header-Container {
     text-align: center;
     background-image: url("https://live.staticflickr.com/4333/36459133251_08ef1db09d_b.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    
 }
 header {
     background-color: yellowgreen;
 }
-
 section .H-Container {
     background-color: navy;
     text-align: center;
 }
-
 section .H-Container {
     color: yellowgreen;
     font-family: Arial, Helvetica, sans-serif;
@@ -45,10 +40,51 @@ section .H-Container {
 }
 .Container {
     width: 100%;
+    background-color: palegreen;
 }
+.Container  a:link {
+    color:white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.Burger {
+    justify-content: flex-start;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: navy;
+    font-weight: 700;
+}
+.Search {
+    justify-content: flex-end;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: navy;
+    font-weight: 700;
+}
+
+ .Container a:hover{
+    color:white;
+}
+.Container a:visited{
+    color:white;
+}
+
+main h3 {
+    font-size: 6vh;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
 .First-Article {
     width: 100%;
     text-align: center;
+    background-image: url("https://www.rosario3.com/__export/1600360927069/sites/rosario3/img/2020/09/17/lapachosrosario15.jpg_1756841869.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-attachment: fixed;
 }
 .Second-Article {
     width: 100%;
@@ -64,17 +100,19 @@ section .H-Container {
 }
 
 .Mobile-Nav {
+    display: flex;
+    justify-content: center;
     overflow: hidden;
-    background-color: #333;
+    background-color: palegreen;
     position: relative;
   }
   
-  .Mobile-Nav .burger {
-    display: none;
+  .Mobile-Nav img {
+      width: 2vh;
   }
   
   .Mobile-Nav a {
-    color: white;
+    color: navy;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
@@ -82,29 +120,62 @@ section .H-Container {
   }
   
   .Mobile-Nav a.icon {
-    background: black;
+    background-color: navy;
     display: block;
     position: absolute;
     right: 0;
     top: 0;
   }
-  
   .Mobile-Nav a:hover {
-    background-color: #ddd;
-    color: black;
+    background-color: palegreen;
+    color: navy;
   }
-  
-
 @media(min-width:768px) and (max-width:1024px) {
+    /*
+    .Nav-Container a {
+        color: navy;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        display: block;
+      }
+      
+      .Nav-Container a.icon {
+        background-color: navy;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      .Nav-Container a:hover {
+        background-color: palegreen;
+        color: navy;
+      }
+      */
+    main .First-Article h3 {
+        font-size: 4vh;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    
+    main .Second-Article h3 {
+        font-size: 2vh;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
 
+    main .Third-Article h3 {
+        font-size: 2vh;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
     .Mobile-Nav {
         display: none;
     }
-
     .Nav-Container {
         display: flex;
-        text-align: center;
+        justify-content: center;
         background-color: palegreen;
+    }
+    .Nav-Container img {
+        width: 2vh;
     }
     .Nav-Container ul {
         list-style-type: none;
@@ -134,16 +205,52 @@ section .H-Container {
         width: 90%;
     }
 }
-
 @media(min-width:1024px) {
+    /*
+    .Nav-Container a {
+        color: navy;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        display: block;
+      }
+      
+      .Nav-Container a.icon {
+        background-color: navy;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      .Nav-Container a:hover {
+        background-color: palegreen;
+        color: navy;
+      }
+      */
+    main .First-Article h3 {
+        font-size: 5vh;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    
+    main .Second-Article h3 {
+        font-size: 3vh;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    main .Third-Article h3 {
+        font-size: 3vh;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
     .Mobile-Nav {
         display: none;
     }
     .Nav-Container {
         display: flex;
-        text-align: center;
+        justify-content: center;
         background-color: palegreen;
-
+    }
+    .Nav-Container img {
+        width: 2vh;
     }
     .Nav-Container ul {
         list-style-type: none;
@@ -171,4 +278,33 @@ section .H-Container {
     .Container img {
         width: 90%;
     }
+}
+
+footer {
+    background-color: yellowgreen;
+    padding-top: 3vh;
+}
+footer .Subscription span {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: navy;
+    font-weight: 700;
+    font-size: 5vh;
+}
+footer .mail-button {
+    display: flex;
+    justify-content: center;
+}
+
+footer .Copyright {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: navy;
+    font-weight: 700;
+    font-size: 2vh;
+    padding-top: 2vh;
 }

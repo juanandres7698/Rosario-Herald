@@ -19,6 +19,12 @@ nav a {
 .Nav-Container {
     display: none;
 }
+main {
+    padding-right: 3%;
+    padding-left: 3%;
+    background-color: palegreen;
+}
+
 .Header-Container {
     text-align: center;
     background-image: url("https://live.staticflickr.com/4333/36459133251_08ef1db09d_b.jpg");

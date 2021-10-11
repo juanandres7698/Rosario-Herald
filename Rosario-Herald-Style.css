@@ -322,5 +322,7 @@ footer .Copyright {
     color: navy;
     font-weight: 700;
     font-size: 2vh;
-    padding-top: 2vh;
+    text-align: center;
+    padding-top: 5vh;
+    padding-bottom: 3vh;
 }

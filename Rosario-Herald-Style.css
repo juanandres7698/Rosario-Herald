@@ -140,7 +140,7 @@ main h3 {
     background-color: palegreen;
     color: navy;
   }
-@media(min-width:768px) and (max-width:1024px) {
+@media(min-width:769px) and (max-width:1024px) {
     /*
     .Nav-Container a {
         color: navy;
@@ -221,7 +221,7 @@ main h3 {
     }
 }
     
-@media(min-width:1024px) {
+@media(min-width:1025px) {
     /*
     .Nav-Container a {
         color: navy;

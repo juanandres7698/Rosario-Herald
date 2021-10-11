@@ -137,7 +137,7 @@ main h3 {
     background-color: palegreen;
     color: navy;
   }
-@media(min-width:769px) and (max-width:1024px) {
+@media(min-width:768px) and (max-width:1024px) {
     main section .Container {
         display: flex;
         flex-wrap: wrap;

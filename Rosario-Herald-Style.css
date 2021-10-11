@@ -8,7 +8,6 @@ header time {
     color: white;
     font-size: 1vw;
 }
-
 nav a {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-decoration: none;
@@ -24,7 +23,6 @@ main {
     padding-left: 3%;
     background-color: palegreen;
 }
-
 .Header-Container {
     text-align: center;
     background-image: url("https://live.staticflickr.com/4333/36459133251_08ef1db09d_b.jpg");
@@ -53,7 +51,6 @@ section .H-Container {
     text-decoration: none;
     font-weight: 500;
 }
-
 .Burger {
     justify-content: flex-start;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -70,7 +67,6 @@ section .H-Container {
     color: navy;
     font-weight: 700;
 }
-
  .Container a:hover{
     color:white;
 }
@@ -84,12 +80,10 @@ section .H-Container {
     font-weight: 700;
     font-size: 1vw;
 }
-
 main h3 {
     font-size: 6vh;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-
 .First-Article {
     width: 100%;
     text-align: center;
@@ -114,7 +108,6 @@ main h3 {
     width: 70%;
     justify-content: center;
 }
-
 .Mobile-Nav {
     display: flex;
     justify-content: center;
@@ -126,7 +119,6 @@ main h3 {
   .Mobile-Nav img {
       width: 2vh;
   }
-  
   .Mobile-Nav a {
     color: navy;
     padding: 14px 16px;
@@ -134,7 +126,6 @@ main h3 {
     font-size: 17px;
     display: block;
   }
-  
   .Mobile-Nav a.icon {
     background-color: navy;
     display: block;
@@ -147,28 +138,6 @@ main h3 {
     color: navy;
   }
 @media(min-width:769px) and (max-width:1024px) {
-    /*
-    .Nav-Container a {
-        color: navy;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: 17px;
-        display: block;
-      }
-      
-      .Nav-Container a.icon {
-        background-color: navy;
-        display: block;
-        position: absolute;
-        right: 0;
-        top: 0;
-      }
-      .Nav-Container a:hover {
-        background-color: palegreen;
-        color: navy;
-      }
-      */
-    
     main section .Container {
         display: flex;
         flex-wrap: wrap;
@@ -177,12 +146,10 @@ main h3 {
         font-size: 4vh;
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     }
-    
     main .Second-Article h3 {
         font-size: 2vh;
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     }
-
     main .Third-Article h3 {
         font-size: 2vh;
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -228,37 +195,14 @@ main h3 {
 }
     
 @media(min-width:1025px) {
-    /*
-    .Nav-Container a {
-        color: navy;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: 17px;
-        display: block;
-      }
-      
-      .Nav-Container a.icon {
-        background-color: navy;
-        display: block;
-        position: absolute;
-        right: 0;
-        top: 0;
-      }
-      .Nav-Container a:hover {
-        background-color: palegreen;
-        color: navy;
-      }
-      */
     main .First-Article h3 {
         font-size: 5vh;
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     }
-    
     main .Second-Article h3 {
         font-size: 3vh;
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     }
-
     main .Third-Article h3 {
         font-size: 3vh;
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -301,7 +245,6 @@ main h3 {
         width: 90%;
     }
 }
-
 footer {
     background-color: yellowgreen;
     padding-top: 3vh;
@@ -320,7 +263,6 @@ footer .mail-button {
     display: flex;
     justify-content: center;
 }
-
 footer .Copyright {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-decoration: none;

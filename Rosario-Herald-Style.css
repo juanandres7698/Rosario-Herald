@@ -137,7 +137,32 @@ main h3 {
     background-color: palegreen;
     color: navy;
   }
+  .Ads {
+      display: none;
+  }
 @media(min-width:768px) and (max-width:1024px) {
+    main {
+        display: flex;
+    }
+    main .News-Section {
+        flex-basis: 75%;
+    }
+    main .Ads {
+        flex-basis: 25%;
+    }
+    main .Ads .H-Container {
+        position:  fixed;
+    }
+    main .Ads img {
+        width: 90%;  
+    }
+    .Ads .H-Container {
+        background-color: navy;
+        text-align: center;
+        color: yellowgreen;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 0.8rem;
+    }
     main section .Container {
         display: flex;
         flex-wrap: wrap;
@@ -207,6 +232,18 @@ main h3 {
     }
 }   
 @media(min-width:1025px) {
+    main {
+        display: flex;
+    }
+    main .News-Section {
+        flex-basis: 75%;
+    }
+    main .Ads {
+        flex-basis: 25%;
+    }
+    .Ads img {
+        width: 90%;
+    }
     main .First-Article h3 {
         font-size: 5vh;
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;

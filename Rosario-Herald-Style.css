@@ -115,7 +115,6 @@ main h3 {
     background-color: pink;
     position: relative;
   }
-  
   .Mobile-Nav img {
       width: 2vh;
   }
@@ -146,15 +145,20 @@ main h3 {
     }
     main .News-Section {
         flex-basis: 75%;
+        flex-shrink: 4;
     }
     main .Ads {
         flex-basis: 25%;
+        flex-shrink: 1;
+        display: flex;
+        flex-direction: column;
     }
     main .Ads .H-Container {
-        position:  fixed;
+        display: none;
     }
     main .Ads img {
         width: 90%;  
+        padding-left: 3vh;
     }
     .Ads .H-Container {
         background-color: navy;
@@ -216,15 +220,18 @@ main h3 {
     }
     .First-Article {
         width: 100%;
+        flex-grow: 4;
         order: 1;
         justify-content: space-between;
     }
     .Second-Article {
         width: 50%;
+        flex-grow: 1;
         order: 2;
     }
     .Third-Article {
         width: 50%; 
+        flex-grow: 1;
         order: 3;
     }
     .Container img {
@@ -237,12 +244,20 @@ main h3 {
     }
     main .News-Section {
         flex-basis: 75%;
+        flex-shrink: 4;
     }
     main .Ads {
         flex-basis: 25%;
+        flex-shrink: 1;
+        display: flex;
+        flex-direction: column;
     }
-    .Ads img {
-        width: 90%;
+    main .Ads .H-Container {
+        display: none;
+    }
+    main .Ads img {
+        width: 90%;  
+        padding-left: 3vh;
     }
     main .First-Article h3 {
         font-size: 5vh;
@@ -290,15 +305,18 @@ main h3 {
     }
     .First-Article {
         width: 60%;
+        flex-grow: 3;
         order: 2;
         justify-content: space-between;
     }
     .Second-Article {
         width: 20%;
+        flex-grow: 1;
         order: 1;
     }
     .Third-Article {
        width: 20%; 
+       flex-grow: 1;
         order: 3;
     }
     .Container img {

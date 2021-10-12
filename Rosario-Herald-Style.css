@@ -61,6 +61,8 @@ section .H-Container {
 }
 .Search {
     justify-content: flex-end;
+    display: inline-flex;
+    justify-content: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-decoration: none;
     text-transform: uppercase;

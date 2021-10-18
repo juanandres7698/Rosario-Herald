@@ -140,40 +140,12 @@ window.onload=function() {
  function focusAge() {
      formAgeVal.style.display="none";
  }
-// Age validation
-var formAge = document.getElementById("form-age");
-var formAgeError = document.getElementById("error-age");
-   formAge.addEventListener("blur", ageValidation);
-   function ageValidation(e) {
-       if (formAge.value>=18) {
-           return (
-               formAgeError.textContent = 'Age verifed',
-               formAgeError.style.display="block",
-               formAgeError.style.fontSize="1.5vh",
-               formAge.style.border="0.2vh solid green",
-               true
-           )
-       }
-       else {
-           return (
-               formAgeError.textContent = 'You must be at least 18 years old',
-               formAgeError.style.display="block",
-               formAgeError.style.fontSize="1.5vh",
-               formAge.style.border="0.2vh solid red",
-               false
-           )
-       }
-   }
-formAge.addEventListener("focus", focusAge);
-function focusAge() {
-    formAgeError.style.display="none";
-}
 
-// Phone Number validation
-var formPhoneNumber = document.getElementById("form-phonenumber");
-var formPhoneNumberVal = document.getElementById("error-phonenumber");
-formPhoneNumber.addEventListener("blur", phoneNumberValidation);
-function phoneNumberValidation(e) {
+ // Phone Number validation
+ var formPhoneNumber = document.getElementById("form-phonenumber");
+ var formPhoneNumberVal = document.getElementById("error-phonenumber");
+ formPhoneNumber.addEventListener("blur", phoneNumberValidation);
+ function phoneNumberValidation(e) {
     if (e.target.value.length>=7 && e.target.value.indexOf(" ")<0 && e.target.value.indexOf("-")<0 
     && e.target.value.indexOf("(")<0 && e.target.value.indexOf(")")<0 && !(e.target.value.match(/[a-zA-Z]/g))) {
         return (
@@ -193,16 +165,16 @@ function phoneNumberValidation(e) {
            false
         )
     }
-}
-formPhoneNumber.addEventListener("focus", focusPhoneNumb);
-function focusPhoneNumb() {
+ }
+ formPhoneNumber.addEventListener("focus", focusPhoneNumb);
+ function focusPhoneNumb() {
    formPhoneNumberVal.style.display="none";
-}
-// Address validation (with regular expressions - Gonna change it)
-var formAddress = document.getElementById("form-address");
-var formAddressVal = document.getElementById("error-address");
-formAddress.addEventListener("blur", addressValidation);
-function addressValidation(e) {
+ }
+ // Address validation (with regular expressions - Gonna change it)
+ var formAddress = document.getElementById("form-address");
+ var formAddressVal = document.getElementById("error-address");
+ formAddress.addEventListener("blur", addressValidation);
+ function addressValidation(e) {
     if (e.target.value.match(/[a-zA-Z]/g) && e.target.value.match(/[0-9]/g) && e.target.value.indexOf(" ")>0 && e.target.value.length>=5) {
         return (
            formAddressVal.textContent = 'Address verifed',
@@ -221,11 +193,39 @@ function addressValidation(e) {
            false
         )
     }
-}
-formAddress.addEventListener("focus", focusAdress);
-function focusAdress() {
+ }
+ formAddress.addEventListener("focus", focusAdress);
+ function focusAdress() {
     formAddressVal.style.display="none";
-}
+ }
 
+ //City validation
+   var formCity = document.getElementById("form-city");
+   var formCityVal = document.getElementById("error-city")
+   formCity.addEventListener("blur", CityValidation);
+   function CityValidation(e) {
+       if (formCity.value.length>=3) {
+           return (
+               formCityVal.textContent = 'City verifed',
+               formCityVal.style.display="block",
+               formCityVal.style.fontSize="1.5vh",
+               formCity.style.border="0.2vh solid green",
+               true
+           )
+       }
+       else {
+           return (
+               formCityVal.textContent = 'Please, enter a valid city (at least 3 characters)',
+               formCityVal.style.display="block",
+               formCityVal.style.fontSize="1.5vh",
+               formCity.style.border="0.2vh solid red",
+               false
+           )
+       }
+   }
+   formCity.addEventListener("focus", focusCity);
+   function focusCity() {
+       formCityVal.style.display="none";
+   }
 
 }

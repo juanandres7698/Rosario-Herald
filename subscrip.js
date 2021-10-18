@@ -198,6 +198,34 @@ formPhoneNumber.addEventListener("focus", focusPhoneNumb);
 function focusPhoneNumb() {
    formPhoneNumberVal.style.display="none";
 }
+// Address validation (with regular expressions - Gonna change it)
+var formAddress = document.getElementById("form-address");
+var formAddressVal = document.getElementById("error-address");
+formAddress.addEventListener("blur", addressValidation);
+function addressValidation(e) {
+    if (e.target.value.match(/[a-zA-Z]/g) && e.target.value.match(/[0-9]/g) && e.target.value.indexOf(" ")>0 && e.target.value.length>=5) {
+        return (
+           formAddressVal.textContent = 'Address verifed',
+           formAddressVal.style.display="block",
+           formAddressVal.style.fontSize="1.5vh",
+           formAddress.style.border="0.2vh solid green",
+           true
+        )
+    }
+    else {
+        return (
+           formAddressVal.textContent = 'Phone number is not valid',
+           formAddressVal.style.display="block",
+           formAddressVal.style.fontSize="1.5vh",
+           formAddress.style.border="0.2vh solid red",
+           false
+        )
+    }
+}
+formAddress.addEventListener("focus", focusAdress);
+function focusAdress() {
+    formAddressVal.style.display="none";
+}
 
 
 }

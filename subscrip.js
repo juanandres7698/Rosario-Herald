@@ -112,4 +112,33 @@ window.onload=function() {
  function focusRePassword() {
      formRepeatPasswordVal.style.display="none";
  }
+ // Age validation
+ var formAge = document.getElementById("form-age");
+ var formAgeVal = document.getElementById("error-age");
+    formAge.addEventListener("blur", ageValidation);
+    function ageValidation(e) {
+        if (formAge.value>=18) {
+            return (
+                formAgeVal.textContent = 'Age verifed',
+                formAgeVal.style.display="block",
+                formAgeVal.style.fontSize="1.5vh",
+                formAge.style.border="0.2vh solid green",
+                true
+            )
+        }
+        else {
+            return (
+                formAgeVal.textContent = 'You must be at least 18 years old',
+                formAgeVal.style.display="block",
+                formAgeVal.style.fontSize="1.5vh",
+                formAge.style.border="0.2vh solid red",
+                false
+            )
+        }
+    }
+ formAge.addEventListener("focus", focusAge);
+ function focusAge() {
+     formAgeVal.style.display="none";
+ }
+
 }

@@ -227,5 +227,36 @@ window.onload=function() {
    function focusCity() {
        formCityVal.style.display="none";
    }
+ // ZIP Code validation
+ var formZipCode = document.querySelector("#form-zipcode");
+ var formZipCodeVal = document.querySelector("#error-zipcode");
+ formZipCode.addEventListener("blur", zipCodeValidation);
+ function zipCodeValidation(e) {
+    var testZipCode = e.target.value;
+    if (testZipCode.length>=3) {
+        return (
+           formZipCodeVal.textContent = 'Zip code verifed',
+           formZipCodeVal.style.display="block",
+           formZipCodeVal.style.fontSize="1.5vh",
+           formZipCode.style.border="0.2vh solid green",
+           true
+        )
+    }
+    else {
+        return (
+           formZipCodeVal.textContent = 'Zip Code does not exist',
+           formZipCodeVal.style.display="block",
+           formZipCodeVal.style.fontSize="1.5vh",
+           formZipCode.style.border="0.2vh solid red",
+           false
+        )
+    }
+ }
+ formZipCode.addEventListener("focus", focusZipCode);
+ function focusZipCode() {
+    formZipCodeVal.style.display="none";
+ }
+
+
 
 }

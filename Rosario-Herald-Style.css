@@ -83,8 +83,52 @@ section .H-Container {
     font-size: 1vw;
 }
 main h3 {
-    font-size: 6vh;
+    font-size: 3vh;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.subscription-page {
+    display: flex;
+    flex-direction: column;
+}
+.subs-header {
+    width: 100%;
+    background-color: navy
+}
+.subscription-page h2 {
+    font-size: 4vh;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-transform: uppercase;
+    color: palegreen;
+}
+.sub-form {
+    padding-top: 5%;
+}
+.sub-form label {
+    font-size: 2vh;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: navy;
+}
+.sub-button {
+    text-align: center;
+    padding-bottom: 5%;
+}
+.sub-columns span{
+    padding-bottom: 3%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.5vh;
+}
+#submit-button {
+    display: block;
+    font-size: 2vh;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: palegreen;
+    text-transform: uppercase;
+    background-color: navy;
+    cursor: pointer;
+}
+.form-fields {
+    padding-left: 0.7 vh;
+    padding-right: 0.7 vh;
 }
 .First-Article {
     width: 100%;

@@ -56,5 +56,33 @@ window.onload=function() {
     function focusEmail() {
         formEmailVal.style.display="none";  
     }
- 
+ // Password validation (with regular expressions - gonna change it)
+ var formPassword = document.getElementById("form-password");
+ var formPasswordVal = document.getElementById("error-password");
+ formPassword.addEventListener("blur", validatePassword);
+ function validatePassword(e) {
+     if (e.target.value.match(/[a-zA-Z]/g) && e.target.value.match(/[0-9]/g) && e.target.value.length>=8) {
+         return (
+            formPasswordVal.textContent = 'Password verifed',
+            formPasswordVal.style.display="block",
+            formPasswordVal.style.fontSize="1.5vh",
+            formPassword.style.border="0.2vh solid green",
+             true
+         )
+     }
+     else {
+         return (
+            formPasswordVal.textContent = 'At least 8 characters, using letters and numbers',
+            formPasswordVal.style.display="block",
+            formPasswordVal.style.fontSize="1.5vh",
+            formPassword.style.border="0.2vh solid red",
+             false
+         )
+     }
+ }
+ formPassword.addEventListener("focus", focusPassword);
+ function focusPassword() {
+     formPasswordVal.style.display="none";
+ }
+
 }

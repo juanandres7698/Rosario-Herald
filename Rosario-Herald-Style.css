@@ -127,8 +127,10 @@ main h3 {
     cursor: pointer;
 }
 .form-fields {
-    padding-left: 0.7 vh;
-    padding-right: 0.7 vh;
+    padding-left: 25%;
+    padding-right: 25%;
+    display: flex;
+    flex-direction: column;
 }
 .First-Article {
     width: 100%;
@@ -283,6 +285,87 @@ main h3 {
     .Container img {
         width: 90%;
     }
+    .subscription-page {
+        display: flex;
+        flex-basis: 75%;
+        flex-shrink: 4;
+        flex-direction: column;
+        width: 70%;
+    }
+    .sub-columns {
+        display: flex;
+        text-align: center;
+    }
+    .first-column {
+        display: flex;
+        flex-direction: column;
+        padding-left: 2%;
+        padding-right: 5%;
+    }
+    .second-column {
+        display: flex;
+        flex-direction: column;
+        padding-left: 5%;
+        padding-right: 2%;
+    }
+    .subs-header {
+        width: 100%;
+        background-color: navy
+    }
+    .subscription-page h2 {
+        font-size: 4vh;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        text-transform: uppercase;
+        color: palegreen;
+    }
+    .sub-form {
+        padding-top: 5%;
+    }
+    .sub-form label {
+        font-size: 3vh;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        color: navy;
+    }
+    .sub-form input {
+        font-size: 3vh;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;  
+    }
+    .sub-button {
+        text-align: center;
+        padding-bottom: 5%;
+        padding-left: 40%;
+        padding-right: 45%;
+    }
+    .sub-columns span{
+        padding-bottom: 3%;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 2.5vh;
+    }
+    #submit-button {
+        display: block;
+        font-size: 2.2vh;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        color: palegreen;
+        text-transform: uppercase;
+        background-color: navy;
+        cursor: pointer;
+    }
+    .form-fields {
+        padding-left: 0.7 vh;
+        padding-right: 0.7 vh;
+        display: flex;
+        flex-direction: column;
+    }
+    .First-Article {
+        width: 100%;
+        text-align: center;
+        background-image: url("https://www.rosario3.com/__export/1600360927069/sites/rosario3/img/2020/09/17/lapachosrosario15.jpg_1756841869.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        background-attachment: fixed;
+    }
+
 }   
 @media(min-width:1025px) {
     main {
@@ -333,6 +416,77 @@ main h3 {
     }
     .Nav-Container li {
         display: inline-flex
+    }
+    .subscription-page {
+        display: flex;
+        flex-basis: 75%;
+        flex-shrink: 4;
+        flex-direction: column;
+        width: 70%;
+    }
+    .sub-columns {
+        display: flex;
+        text-align: center;
+    }
+    .first-column {
+        display: flex;
+        flex-direction: column;
+        padding-left: 2%;
+        padding-right: 5%;
+    }
+    .second-column {
+        display: flex;
+        flex-direction: column;
+        padding-left: 5%;
+        padding-right: 2%;
+    }
+    .subs-header {
+        width: 100%;
+        background-color: navy
+    }
+    .subscription-page h2 {
+        font-size: 6vh;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        text-transform: uppercase;
+        color: palegreen;
+    }
+    .sub-form {
+        padding-top: 5%;
+    }
+    .sub-form label {
+        font-size: 4vh;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        color: navy;
+    }
+    .sub-form input {
+        font-size: 4vh;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;  
+    }
+    .sub-button {
+        text-align: center;
+        padding-bottom: 5%;
+        padding-left: 40%;
+        padding-right: 45%;
+    }
+    .sub-columns span{
+        padding-bottom: 3%;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 3.5vh;
+    }
+    #submit-button {
+        display: block;
+        font-size: 3vh;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        color: palegreen;
+        text-transform: uppercase;
+        background-color: navy;
+        cursor: pointer;
+    }
+    .form-fields {
+        padding-left: 0.7 vh;
+        padding-right: 0.7 vh;
+        display: flex;
+        flex-direction: column;
     }
     .List-Tablet {
         display: none;

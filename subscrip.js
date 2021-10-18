@@ -28,5 +28,33 @@ window.onload=function() {
     function focusFullName() {
         formNameVal.style.display="none";
     }
-   
+    //Email Validation
+    var formEmail = document.getElementById("form-email");
+    var formEmailVal = document.getElementById("error-email")
+    formEmail.addEventListener("blur", emailValidation);
+    function emailValidation() {
+        if (formEmail.value.indexOf("@")>0 && formEmail.value.indexOf(".")>0) {
+            return (
+                formEmailVal.textContent = 'Email verifed',
+                formEmailVal.style.display="block",
+                formEmailVal.style.fontSize="1.5vh",
+                formEmail.style.border="0.2vh solid green",
+                true
+            ) 
+        }
+        else {
+            return (
+                formEmailVal.textContent = 'Email format is not valid',
+                formEmailVal.style.display="block",
+                formEmailVal.style.fontSize="1.5vh",
+                formEmail.style.border="0.2vh solid red",
+                false
+            )
+        }
+    }
+    email.addEventListener("focus", focusEmail)
+    function focusEmail() {
+        formEmailVal.style.display="none";  
+    }
+ 
 }

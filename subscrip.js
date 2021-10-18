@@ -140,5 +140,64 @@ window.onload=function() {
  function focusAge() {
      formAgeVal.style.display="none";
  }
+// Age validation
+var formAge = document.getElementById("form-age");
+var formAgeError = document.getElementById("error-age");
+   formAge.addEventListener("blur", ageValidation);
+   function ageValidation(e) {
+       if (formAge.value>=18) {
+           return (
+               formAgeError.textContent = 'Age verifed',
+               formAgeError.style.display="block",
+               formAgeError.style.fontSize="1.5vh",
+               formAge.style.border="0.2vh solid green",
+               true
+           )
+       }
+       else {
+           return (
+               formAgeError.textContent = 'You must be at least 18 years old',
+               formAgeError.style.display="block",
+               formAgeError.style.fontSize="1.5vh",
+               formAge.style.border="0.2vh solid red",
+               false
+           )
+       }
+   }
+formAge.addEventListener("focus", focusAge);
+function focusAge() {
+    formAgeError.style.display="none";
+}
+
+// Phone Number validation
+var formPhoneNumber = document.getElementById("form-phonenumber");
+var formPhoneNumberVal = document.getElementById("error-phonenumber");
+formPhoneNumber.addEventListener("blur", phoneNumberValidation);
+function phoneNumberValidation(e) {
+    if (e.target.value.length>=7 && e.target.value.indexOf(" ")<0 && e.target.value.indexOf("-")<0 
+    && e.target.value.indexOf("(")<0 && e.target.value.indexOf(")")<0 && !(e.target.value.match(/[a-zA-Z]/g))) {
+        return (
+           formPhoneNumberVal.textContent = 'Phone number verifed',
+           formPhoneNumberVal.style.display="block",
+           formPhoneNumberVal.style.fontSize="1.5vh",
+           formPhoneNumber.style.border="0.2vh solid green",
+           true
+        )
+    }
+    else {
+        return (
+           formPhoneNumberVal.textContent = 'Phone number is not valid',
+           formPhoneNumberVal.style.display="block",
+           formPhoneNumberVal.style.fontSize="1.5vh",
+           formPhoneNumber.style.border="0.2vh solid red",
+           false
+        )
+    }
+}
+formPhoneNumber.addEventListener("focus", focusPhoneNumb);
+function focusPhoneNumb() {
+   formPhoneNumberVal.style.display="none";
+}
+
 
 }

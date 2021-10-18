@@ -256,7 +256,34 @@ window.onload=function() {
  function focusZipCode() {
     formZipCodeVal.style.display="none";
  }
-
-
+ // ID Number validation
+ var formIDNumber = document.getElementById("form-idnumber");
+ var formIDNumberVal = document.getElementById("error-idnumber");
+ formIDNumber.addEventListener("blur", idValidation);
+ function idValidation(e) {
+    var testDni = e.target.value;
+    if (testDni.length>6 && testDni.length<9) {
+        return (
+           formIDNumberVal.textContent = 'ID Number verified',
+           formIDNumberVal.style.display="block",
+           formIDNumberVal.style.fontSize="1.5vh",
+           formIDNumber.style.border="0.2vh solid green",
+           true
+        )
+    }
+    else {
+        return (
+           formIDNumberVal.textContent = 'Please enter a valid ID Number (7 or 8 numbers)',
+           formIDNumberVal.style.display="block",
+           formIDNumberVal.style.fontSize="1.5vh",
+           formIDNumber.style.border="0.2vh solid red",
+           false
+        )
+    }
+}
+ formIDNumber.addEventListener("focus", focusIDNumber);
+ function focusIDNumber() {
+    formIDNumberVal.style.display="none";
+ }
 
 }

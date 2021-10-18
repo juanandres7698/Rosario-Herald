@@ -299,14 +299,14 @@ main h3 {
     .first-column {
         display: flex;
         flex-direction: column;
-        padding-left: 2%;
-        padding-right: 5%;
+        padding-right: 2%;
+        width: 50%;
     }
     .second-column {
         display: flex;
         flex-direction: column;
-        padding-left: 5%;
-        padding-right: 2%;
+        width: 50%;
+        padding-left: 2%;
     }
     .subs-header {
         width: 100%;
@@ -327,7 +327,6 @@ main h3 {
         color: navy;
     }
     .sub-form input {
-        font-size: 3vh;
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;  
     }
     .sub-button {
@@ -351,8 +350,6 @@ main h3 {
         cursor: pointer;
     }
     .form-fields {
-        padding-left: 0.7 vh;
-        padding-right: 0.7 vh;
         display: flex;
         flex-direction: column;
     }
@@ -426,19 +423,18 @@ main h3 {
     }
     .sub-columns {
         display: flex;
-        text-align: center;
     }
     .first-column {
         display: flex;
         flex-direction: column;
+        width: 50%;
         padding-left: 2%;
-        padding-right: 5%;
     }
     .second-column {
         display: flex;
         flex-direction: column;
-        padding-left: 5%;
-        padding-right: 2%;
+        width: 50%;
+        padding-left: 2%;
     }
     .subs-header {
         width: 100%;
@@ -459,13 +455,12 @@ main h3 {
         color: navy;
     }
     .sub-form input {
-        font-size: 4vh;
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;  
     }
     .sub-button {
         text-align: center;
         padding-bottom: 5%;
-        padding-left: 40%;
+        padding-left: 35%;
         padding-right: 45%;
     }
     .sub-columns span{
@@ -483,8 +478,6 @@ main h3 {
         cursor: pointer;
     }
     .form-fields {
-        padding-left: 0.7 vh;
-        padding-right: 0.7 vh;
         display: flex;
         flex-direction: column;
     }

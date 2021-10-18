@@ -84,5 +84,32 @@ window.onload=function() {
  function focusPassword() {
      formPasswordVal.style.display="none";
  }
-
+ //Repeat password validation (with regular expressions - gonna change it)
+ var formRepeatPassword = document.querySelector('#form-rpassword');
+ var formRepeatPasswordVal = document.querySelector("error-rpassword");
+ formRepeatPassword.addEventListener("blur", validateRePassword);
+ function validateRePassword(e) {
+     if (formRepeatPassword.value == formPassword.value && e.target.value.match(/[a-zA-Z]/g) && e.target.value.match(/[0-9]/g) && e.target.value.length>=8) {
+         return (
+            formRepeatPasswordVal.textContent = 'Password verifed',
+            formRepeatPasswordVal.style.display="block",
+            formRepeatPasswordVal.style.fontSize="1.5vh",
+            formRepeatPassword.style.border="0.2vh solid green",
+            true
+         )
+     }
+     else {
+         return (
+             formRepeatPasswordVal.textContent = 'Please, write the same password',
+             formRepeatPasswordVal.style.display="block",
+             formRepeatPasswordVal.style.fontSize="1.5vh",
+             formRepeatPassword.style.border="0.2vh solid red",
+             false
+         )
+     }
+ }
+ formRepeatPassword.addEventListener("focus", focusRePassword);
+ function focusRePassword() {
+     formRepeatPasswordVal.style.display="none";
+ }
 }

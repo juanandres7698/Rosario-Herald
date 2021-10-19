@@ -334,4 +334,19 @@ window.onload=function() {
           location.reload();
       }
     }
+ /*
+ // Bonus
+ var hiName = document.getElementById("form-name");
+ hiName.addEventListener("keyup", bonus);
+ function bonus(e) {
+    document.getElementById("hello-header").innerHTML= e.target.value ? "Hello "+fullName.value+"" : "";
+ */
+    var hiName = document.getElementById('form-name');
+    hiName.addEventListener('keyup',autoCompleteEvent);
+    hiName.addEventListener('focus',autoCompleteEvent);
+    function autoCompleteEvent(e) {
+        var  valueName = e.target.value;
+        var headerName = document.getElementById('hello-header');
+        headerName.innerHTML = 'Hello ' + valueName + ' !';
+    }
 }

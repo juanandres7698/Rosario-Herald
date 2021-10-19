@@ -1,4 +1,7 @@
 window.onload=function() {
+    //----- Arrays for register button -----// 
+    var fieldsArray = [];
+    var errorArray = [];
     //Full name validation
     var formName = document.querySelector('#form-name');
     var formNameVal = document.querySelector('#error-name');
@@ -9,8 +12,9 @@ window.onload=function() {
            return (
                formNameVal.textContent = 'Full name field must have more than 6 letters and, at least, one blank space',
                formNameVal.style.display="block",
-               formNameVal.style.fontSize="1.5vh",
                formName.style.border="0.2vh solid red",
+               fieldsArray[0] = 'error',
+               errorArray[0] = 'Error! Invalid full name: Full name field must have more than 6 letters and, at least, one blank space.' + '\n',
                true
            )   
         }
@@ -18,8 +22,9 @@ window.onload=function() {
            return (
                formNameVal.textContent = 'Name verifed',
                formNameVal.style.display="block",
-               formNameVal.style.fontSize="1.5vh",
                formName.style.border="0.2vh solid green",
+               fieldsArray[0] ='Full Name: ' + formName.value + '\n',
+               errorArray[0] = null,
                false
            )
         }
@@ -37,8 +42,9 @@ window.onload=function() {
             return (
                 formEmailVal.textContent = 'Email verifed',
                 formEmailVal.style.display="block",
-                formEmailVal.style.fontSize="1.5vh",
                 formEmail.style.border="0.2vh solid green",
+                fieldsArray[1] ='Email: ' + formEmail.value + '\n',
+                errorArray[1] = null,
                 true
             ) 
         }
@@ -46,8 +52,9 @@ window.onload=function() {
             return (
                 formEmailVal.textContent = 'Email format is not valid',
                 formEmailVal.style.display="block",
-                formEmailVal.style.fontSize="1.5vh",
                 formEmail.style.border="0.2vh solid red",
+                fieldsArray[1] = 'error',
+                errorArray[1] = 'Error! Invalid email format.' + '\n',
                 false
             )
         }
@@ -65,18 +72,20 @@ window.onload=function() {
          return (
             formPasswordVal.textContent = 'Password verifed',
             formPasswordVal.style.display="block",
-            formPasswordVal.style.fontSize="1.5vh",
             formPassword.style.border="0.2vh solid green",
-             true
+            fieldsArray[2] ='Password: ' + formPassword.value + '\n',
+            errorArray[2] = null,
+            true
          )
      }
      else {
          return (
             formPasswordVal.textContent = 'At least 8 characters, using letters and numbers',
             formPasswordVal.style.display="block",
-            formPasswordVal.style.fontSize="1.5vh",
             formPassword.style.border="0.2vh solid red",
-             false
+            fieldsArray[2] = 'error',
+            errorArray[2] = 'Invalid password: Use at least 8 characters, using letters and numbers' + '\n',
+            false
          )
      }
  }
@@ -93,8 +102,9 @@ window.onload=function() {
          return (
             formRepeatPasswordVal.textContent = 'Password verifed',
             formRepeatPasswordVal.style.display="block",
-            formRepeatPasswordVal.style.fontSize="1.5vh",
             formRepeatPassword.style.border="0.2vh solid green",
+            fieldsArray[3] = 'Confirm Password: ' + formRepeatPassword.value + '\n',
+            errorArray[3] = null,
             true
          )
      }
@@ -102,8 +112,9 @@ window.onload=function() {
          return (
              formRepeatPasswordVal.textContent = 'Please, write the same password',
              formRepeatPasswordVal.style.display="block",
-             formRepeatPasswordVal.style.fontSize="1.5vh",
              formRepeatPassword.style.border="0.2vh solid red",
+             fieldsArray[3] = 'error',
+             errorArray[3]= 'Please confirm password.' + '\n',
              false
          )
      }
@@ -121,8 +132,10 @@ window.onload=function() {
             return (
                 formAgeVal.textContent = 'Age verifed',
                 formAgeVal.style.display="block",
-                formAgeVal.style.fontSize="1.5vh",
+              //  formAgeVal.style.fontSize="1.5vh",
                 formAge.style.border="0.2vh solid green",
+                fieldsArray[4] = 'Age: ' + formAge.value + '\n',
+                errorArray[4] = null,
                 true
             )
         }
@@ -130,8 +143,10 @@ window.onload=function() {
             return (
                 formAgeVal.textContent = 'You must be at least 18 years old',
                 formAgeVal.style.display="block",
-                formAgeVal.style.fontSize="1.5vh",
+            //    formAgeVal.style.fontSize="1.5vh",
                 formAge.style.border="0.2vh solid red",
+                fieldsArray[4] = 'error',
+                errorArray[4] = 'Error! You must be at least 18 years old.' + '\n',
                 false
             )
         }
@@ -151,8 +166,10 @@ window.onload=function() {
         return (
            formPhoneNumberVal.textContent = 'Phone number verifed',
            formPhoneNumberVal.style.display="block",
-           formPhoneNumberVal.style.fontSize="1.5vh",
+         //  formPhoneNumberVal.style.fontSize="1.5vh",
            formPhoneNumber.style.border="0.2vh solid green",
+           fieldsArray[5] = 'Phone Number: ' + formPhoneNumber.value + '\n',
+           errorArray[5] = null,
            true
         )
     }
@@ -160,8 +177,10 @@ window.onload=function() {
         return (
            formPhoneNumberVal.textContent = 'Phone number is not valid',
            formPhoneNumberVal.style.display="block",
-           formPhoneNumberVal.style.fontSize="1.5vh",
+          // formPhoneNumberVal.style.fontSize="1.5vh",
            formPhoneNumber.style.border="0.2vh solid red",
+           fieldsArray[5] = 'error',
+           errorArray[5] = 'Error! Phone number is not valid.' + '\n',
            false
         )
     }
@@ -179,17 +198,21 @@ window.onload=function() {
         return (
            formAddressVal.textContent = 'Address verifed',
            formAddressVal.style.display="block",
-           formAddressVal.style.fontSize="1.5vh",
+          //formAddressVal.style.fontSize="1.5vh",
            formAddress.style.border="0.2vh solid green",
+           fieldsArray[6] = 'Address: ' + formAddress.value + '\n',
+           errorArray[6] = null,
            true
         )
     }
     else {
         return (
-           formAddressVal.textContent = 'Phone number is not valid',
+           formAddressVal.textContent = 'Address is not valid',
            formAddressVal.style.display="block",
-           formAddressVal.style.fontSize="1.5vh",
+          // formAddressVal.style.fontSize="1.5vh",
            formAddress.style.border="0.2vh solid red",
+           fieldsArray[6] = 'error',
+           errorArray[6] = 'Please verify your address.' + '\n',
            false
         )
     }
@@ -208,8 +231,10 @@ window.onload=function() {
            return (
                formCityVal.textContent = 'City verifed',
                formCityVal.style.display="block",
-               formCityVal.style.fontSize="1.5vh",
+              // formCityVal.style.fontSize="1.5vh",
                formCity.style.border="0.2vh solid green",
+               fieldsArray[7] = 'City: ' + formCity.value + '\n',
+               errorArray[7] = null,
                true
            )
        }
@@ -217,8 +242,10 @@ window.onload=function() {
            return (
                formCityVal.textContent = 'Please, enter a valid city (at least 3 characters)',
                formCityVal.style.display="block",
-               formCityVal.style.fontSize="1.5vh",
+               //formCityVal.style.fontSize="1.5vh",
                formCity.style.border="0.2vh solid red",
+               fieldsArray[7] = 'error',
+               errorArray[7] = 'Please verify your city' + '\n',
                false
            )
        }
@@ -237,8 +264,10 @@ window.onload=function() {
         return (
            formZipCodeVal.textContent = 'Zip code verifed',
            formZipCodeVal.style.display="block",
-           formZipCodeVal.style.fontSize="1.5vh",
+           //formZipCodeVal.style.fontSize="1.5vh",
            formZipCode.style.border="0.2vh solid green",
+           fieldsArray[8] = 'Zip Code: ' + formZipCode.value + '\n',
+           errorArray[8] = null,
            true
         )
     }
@@ -246,8 +275,10 @@ window.onload=function() {
         return (
            formZipCodeVal.textContent = 'Zip Code does not exist',
            formZipCodeVal.style.display="block",
-           formZipCodeVal.style.fontSize="1.5vh",
+           //formZipCodeVal.style.fontSize="1.5vh",
            formZipCode.style.border="0.2vh solid red",
+           fieldsArray[8] = 'error',
+           errorArray[8] = 'Invalid Zip Code' + '\n',
            false
         )
     }
@@ -266,8 +297,10 @@ window.onload=function() {
         return (
            formIDNumberVal.textContent = 'ID Number verified',
            formIDNumberVal.style.display="block",
-           formIDNumberVal.style.fontSize="1.5vh",
+           //formIDNumberVal.style.fontSize="1.5vh",
            formIDNumber.style.border="0.2vh solid green",
+           fieldsArray[9] = 'ID Number: ' + formIDNumber.value + '\n',
+           errorArray[9] = null,
            true
         )
     }
@@ -275,8 +308,10 @@ window.onload=function() {
         return (
            formIDNumberVal.textContent = 'Please enter a valid ID Number (7 or 8 numbers)',
            formIDNumberVal.style.display="block",
-           formIDNumberVal.style.fontSize="1.5vh",
+           //formIDNumberVal.style.fontSize="1.5vh",
            formIDNumber.style.border="0.2vh solid red",
+           fieldsArray[9] = 'error',
+           errorArray[9] = 'Your ID Number is wrong' + '\n',
            false
         )
     }
@@ -285,5 +320,18 @@ window.onload=function() {
  function focusIDNumber() {
     formIDNumberVal.style.display="none";
  }
-
+  //Send button
+  var button = document.getElementById('submit-button');
+  button.addEventListener('click',clickEvent);
+  function clickEvent(e) {
+      if(fieldsArray.length == 0) {
+          alert('Please complete the form!')
+      } else if(fieldsArray.includes("error")) {
+          alert(errorArray.join(' '));
+      } else {
+          alert(fieldsArray.join(' '));
+          alert('Thanks for your subscription!');
+          location.reload();
+      }
+    }
 }

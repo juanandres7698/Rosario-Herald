@@ -1,4 +1,5 @@
 # Rosario Herald
+This project is thought to learn Responsive Design and practise CSS Flexbox. This is my fictional news site.
 The only English language daily newspaper in Rosario. Politics, Economics, Sports and more. Check out our website:
 Link: https://juanandres7698.github.io/Rosario-Herald/MySite.html
 # Fifth week project: 

@@ -318,9 +318,78 @@ window.onload=function() {
         modal.style.display = 'none';
     }
     
+ //Weekly Problem 6
 
+    var dataStorage = function () {
+        localStorage.setItem('name', formName.value);
+        localStorage.setItem('email', formEmail.value);
+        localStorage.setItem('password', formPassword.value);
+        localStorage.setItem('confirm password', formPassword.value);
+        localStorage.setItem('age', formAge.value);
+        localStorage.setItem('phone number', formPhoneNumber.value);
+        localStorage.setItem('address', formAddress.value);
+        localStorage.setItem('city', formCity.value);
+        localStorage.setItem('zip code', formZipCode.value);
+        localStorage.setItem('id number', formIDNumber.value);
+    }
+    var button = document.getElementById('submit-button');
+    button.addEventListener('click',clickEvent);
+    function clickEvent(e) {
+        var url = 'https://curso-dev-2021.herokuapp.com/newsletter?name='+formName.value+'&email='
+        +formEmail.value+'&password='+formPassword.value+'&confirmPassword='+ formRepeatPassword.value+'&age='+
+        formAge.value+'&phoneNumber='+formPhoneNumber.value+'&address='+formAddress.value+'&city='
+        +formCity.value+'&postalCode='+formZipCode.value+'&id='+formIDNumber.value;
+        var message = document.getElementById('modal-content');
+        var titleMessage = document.getElementById('modal-title');
+        if(fieldsArray.length == 0) {
+            modal.style.display = 'block';
+            message.innerHTML = 'Please complete the form!';
+        } else if(fieldsArray.includes("error")) {
+            modal.style.display = 'block';
+            var errorMessages = '<ul class ="list-modal">';
+            for(var i = 0; i < errorArray.length; i++) {
+                if(errorArray[i] !== null && errorArray[i] !== '' && errorArray[i] !== undefined) {
+                    errorMessages += '<li>' + errorArray[i] + '</li>';
+                }
+            }
+            errorMessages += '</ul>';
+            message.innerHTML = errorMessages;
+        } else {
+            fetch(url)
+                .then(function(res) {
+                    if(res.status === 200) {
+                        return res.json();
+                    } else {
+                        throw Error(res.status);
+                    }
+                })
+                .then(function(data) {
+                    if(formName.value !== '' && formEmail.value !== '' && formPassword.value !== '' 
+                      && formRepeatPassword.value !== '' 
+                      && formAge.value !== '' && formPhoneNumber.value !== '' && formAddress.value !== ''
+                      && formCity.value !== ''  && formZipCode.value !== '' && formIDNumber.value !== '') {
+                        modal.style.display = 'block';  
+                        titleMessage.innerHTML = 'Thank you! Your subscription was succesfully completed. Here is your information:';
+                        var fieldsMessages = '<ul class = "list-modal">';
+                        for(var i = 0; i < fieldsArray.length; i++) {
+                            fieldsMessages += '<li>' + fieldsArray[i] + '</li>';
+                        }
+                        fieldsMessages += '</ul>';
+                        message.innerHTML = fieldsMessages;
+                        dataStorage();
+                    } else {
+                        modal.style.display = 'block';
+                        message.innerHTML = 'Please complete the form!';
+                    }  
+                })
+                .catch(function(err) {
+                    modal.style.display = 'block';
+                    message.innerHTML = err;
+                }) 
+        }
+    }
 
-
+  
  // Bonus
     var hiName = document.getElementById('form-name');
     hiName.addEventListener('keyup',autoCompleteEvent);

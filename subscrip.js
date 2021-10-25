@@ -369,7 +369,7 @@ window.onload=function() {
                       && formAge.value !== '' && formPhoneNumber.value !== '' && formAddress.value !== ''
                       && formCity.value !== ''  && formZipCode.value !== '' && formIDNumber.value !== '') {
                         modal.style.display = 'block';  
-                        titleMessage.innerHTML = 'Thank you! Your subscription was succesfully completed. Here is your information:';
+                        titleMessage.innerHTML = 'Thank you for your subscription!';
                         var fieldsMessages = '<ul class = "list-modal">';
                         for(var i = 0; i < fieldsArray.length; i++) {
                             fieldsMessages += '<li>' + fieldsArray[i] + '</li>';

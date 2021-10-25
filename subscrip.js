@@ -389,7 +389,23 @@ window.onload=function() {
         }
     }
 
-  
+ // CHECK LOCAL STORAGE
+
+    function checkLocalStorage () {
+        formName.value = !!localStorage.getItem('name') ? localStorage.getItem('name') : null;
+        formEmail.value = !!localStorage.getItem('email') ? localStorage.getItem('email') : null;
+        formPassword.value = !!localStorage.getItem('password') ? localStorage.getItem('password') : null;
+        formRepeatPassword.value = !!localStorage.getItem('confirm password') ? localStorage.getItem('confirm password') : null;
+        formAge.value = !!localStorage.getItem('age') ? localStorage.getItem('age') : null;
+        formPhoneNumber.value = !!localStorage.getItem('phone number') ? localStorage.getItem('phone number') : null;
+        formAddress.value = !!localStorage.getItem('address') ? localStorage.getItem('address') : null;
+        formCity.value = !!localStorage.getItem('city') ? localStorage.getItem('city') : null;
+        formZipCode.value = !!localStorage.getItem('zip code') ? localStorage.getItem('zip code') : null;
+        formIDNumber.value = !!localStorage.getItem('id number') ? localStorage.getItem('id number') : null;
+    };
+    window.onload = checkLocalStorage();
+
+
  // Bonus
     var hiName = document.getElementById('form-name');
     hiName.addEventListener('keyup',autoCompleteEvent);

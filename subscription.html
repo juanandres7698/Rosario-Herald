@@ -13,15 +13,13 @@
 </head>
 <body>
  <!--Modal Beginning -->
- <div class="modal-container pop-up">
-     <div class="modal-header">
-        <p id="modal-title"></p>
-     </div>
-     <div class="modal-body">
-        <p id="modal-message"></p>
-        <button type="button" class="modal-button">x</button>
-     </div>
-</div>
+ <div id="my-modal" class="pop-up">
+    <div class="modal-container">
+      <h3 id="modal-title"></h3>
+      <p id="modal-message"></p>
+      <button type="button" id="modal-button">X</button>
+    </div>
+  </div>
   <!-- Modal End-->
     <header>
         <div class="Header-Container">
@@ -168,7 +166,8 @@
                     </div>
                     <div class="sub-button">
                         <div class="form-fields">
-                            <input type="submit" value="Submit" id="submit-button">
+                            <button id="submit-button">Submit</button>
+                      <!--  <input type="submit" value="Submit" id="submit-button"> --> 
                         </div>
                     </div>
                 </form>

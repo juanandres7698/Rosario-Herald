@@ -339,7 +339,7 @@ window.onload=function() {
         +formEmail.value+'&password='+formPassword.value+'&confirmPassword='+ formRepeatPassword.value+'&age='+
         formAge.value+'&phoneNumber='+formPhoneNumber.value+'&address='+formAddress.value+'&city='
         +formCity.value+'&postalCode='+formZipCode.value+'&id='+formIDNumber.value;
-        var message = document.getElementById('modal-content');
+        var message = document.getElementById('modal-message');
         var titleMessage = document.getElementById('modal-title');
         if(fieldsArray.length == 0) {
             modal.style.display = 'block';

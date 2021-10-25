@@ -307,7 +307,8 @@ window.onload=function() {
  function focusIDNumber() {
     formIDNumberVal.style.display='none';
  }
-  //Send button
+  //Send button (Fifth week code)
+  
   var button = document.getElementById('submit-button');
   button.addEventListener('click',clickEvent);
   function clickEvent(e) {
@@ -316,11 +317,298 @@ window.onload=function() {
       } else if(fieldsArray.includes('error')) {
           alert(errorArray.join(' '));
       } else {
-          alert(fieldsArray.join(' '));
-          alert('Thanks for your subscription!');
+          // alert(fieldsArray.join(' '));
+          sendForm();
+          // alert('Thanks for your subscription!');
           location.reload();
       }
     }
+ 
+ /*
+ //Close modal 
+    var modal = document.getElementById('My-modal');
+    var closeButton = document.getElementById('Modal-button');
+    closeButton.addEventListener('click',closeModal);
+    function closeModal(e) {
+        modal.style.display = "none";
+    }
+
+ // SEND BUTTON (Sixth week code)
+ var dataStorage = function () {
+        localStorage.setItem('name', formName.value);
+        localStorage.setItem('email', formEmail.value);
+        localStorage.setItem('password', formPassword.value);
+        localStorage.setItem('confirm-password', formRepeatPassword.value);
+        localStorage.setItem('age', formAge.value);
+        localStorage.setItem('phone-number', formPhoneNumber.value);
+        localStorage.setItem('address', formAddress.value);
+        localStorage.setItem('city', formCity.value);
+        localStorage.setItem('zip-code', formZipCode.value);
+        localStorage.setItem('id-number', formIDNumber.value);
+    }
+    var button = document.getElementById('submit-button');
+    button.addEventListener('click',clickEvent);
+    function clickEvent(e) {
+        var url = 'https://curso-dev-2021.herokuapp.com/newsletter?name='+formName.value+'&email='+formEmail.value+'&password='+formPassword.value+'&confirmPassword='+formRepeatPassword.value+'&age='+formAge.value+'&phoneNumber='+formPhoneNumber.value+'&address='+formAddress.value+'&city='+formCity.value+'&zipCode='+formZipCode.value+'&id='+formIDNumber.value;
+        var message = document.getElementById('message');
+        var titleMessage = document.getElementById('title-message');
+        if(fieldsArray.length == 0) {
+            modal.style.display = 'block';
+            message.innerHTML = 'Incomplete form';
+        } else if(fieldsArray.includes('error')) {
+            modal.style.display = 'block';
+            var wrongMessage = '<ul class ="list-modal">';
+            for(var i = 0; i < errorArray.length; i++) {
+                if(errorArray[i] !== null && errorArray[i] !== undefined) {
+                    wrongMessage += '<li>' + errorArray[i] + '</li>';
+                }
+            }
+            wrongMessage += '</ul>';
+            message.innerHTML = wrongMessage;
+        } else {
+            fetch(url)
+                .then(function(res) {
+                    if(res.status === 200) {
+                        return res.json();
+                    } else {
+                        throw res.status;
+                    }
+                })
+                .then(function(data) {
+                    modal.style.display = "block";  
+                    titleMessage.innerHTML = 'Thank you! Your subscription was succesfully completed. Here is your information:'
+                    var registerMessages = '<ul class ="list-modal">';
+                    for(var i = 0; i < registerArray.length; i++) {
+                            registerMessages += '<li>' + registerArray[i] + '</li>';
+                    }
+                    registerMessages += '</ul>';
+                    message.innerHTML = registerMessages;
+                    dataStorage();
+                })
+                .catch(function(err) {
+                    modal.style.display = "block";
+                    message.innerHTML = 'Error status: ' + err;
+                }) 
+        }
+    }
+   // Check Local Storage for user data & autocomplete form//
+
+   function checkLocalStorage () {
+    formName.value = !!localStorage.getItem('name') ? localStorage.getItem('name') : null;
+    formEmail.value = !!localStorage.getItem('email') ? localStorage.getItem('email') : null;
+    formPassword.value = !!localStorage.getItem('password') ? localStorage.getItem('password') : null;
+    formRepeatPassword.value = !!localStorage.getItem('confirm-password') ? localStorage.getItem('confirm-password') : null;
+    formAge.value = !!localStorage.getItem('age') ? localStorage.getItem('age') : null;
+    formPhoneNumber.value = !!localStorage.getItem('phone-number') ? localStorage.getItem('phone-number') : null;
+    formAddress.value = !!localStorage.getItem('address') ? localStorage.getItem('address') : null;
+    formCity.value = !!localStorage.getItem('city') ? localStorage.getItem('city') : null;
+    formZipCode.value = !!localStorage.getItem('zip-code') ? localStorage.getItem('zip-code') : null;
+    formIDNumber.value = !!localStorage.getItem('id-number') ? localStorage.getItem('id-number') : null;
+ };
+ window.onload = checkLocalStorage();
+ */
+
+ //SEND BUTTON:
+ /*
+ var button = document.getElementById('submit-button');
+ var infoModal = document.getElementById('subscription-modal');
+ var nameInfo = document.getElementById('name-info');
+ var emailInfo = document.getElementById('email-info');
+ var passInfo = document.getElementById('pass-info');
+ var ageInfo = document.getElementById('age-info');
+ var phoneInfo = document.getElementById('phone-info');
+ var addressInfo = document.getElementById('address-info');
+ var cityInfo = document.getElementById('city-info');
+ var pCodeInfo = document.getElementById('pcode-info');
+ var idInfo = document.getElementById('id-info');
+ var emptyFields = document.getElementById('empty-fields');
+ var formErrors = {
+    name: '',
+    email: '',
+    password: '',
+    repeatPassword: '',
+    age: '',
+    phone: '',
+    address: '',
+    city: '',
+    postalCode: '',
+    id: ''
+ };
+ var subscriptionModal = document.querySelector('#subscription-modal');
+var close = document.querySelector('.close');
+var subscriptionBtn = document.querySelector('.submit-button');
+subscriptionBtn.onclick = function () {
+            subscriptionModal.style.display = "block";
+        }
+        close.onclick = function () {
+            subscriptionModal.style.display = "none";
+        }
+var userDataStorage = function () {
+    localStorage.setItem('name', formName.value);
+    localStorage.setItem('email', formEmail.value);
+    localStorage.setItem('password', formPassword.value);
+    localStorage.setItem('confirm-password', formRepeatPassword.value);
+    localStorage.setItem('age', formAge.value);
+    localStorage.setItem('phone-number', formPhoneNumber.value);
+    localStorage.setItem('address', formAddress.value);
+    localStorage.setItem('city', formCity.value);
+    localStorage.setItem('zip-code', formZipCode.value);
+    localStorage.setItem('id-number', formIDNumber.value);
+};
+
+var modalMessage = function () {
+    var API_URL = 'https://curso-dev-2021.herokuapp.com/newsletter?';
+    var queryParams = `name=${formName.value}&email=${formEmail.value}&password=${formPassword.value}&confirm-password=${formRepeatPassword.value}&age=${formAge.value}&phone-number=${formPhoneNumber.value}&address=${formPhoneNumber.value}&city=${formCity.value}&zip-code=${formZipCode.value}&id-number=${formIDNumber.value}`;
+    if(formErrors.name == '' && formErrors.email == '' && formErrors.password == ''
+    && formErrors.age == '' && formErrors.phone == '' && formErrors.address == ''
+    && formErrors.city == '' && formErrors.postalCode == '' && formErrors.id == '') {
+        fetch(`${API_URL}${queryParams}`)
+        .then(response => response.json())
+        .then(data => {
+            var output = '';
+            for (var property in data) {
+                output += property + ': ' + data[property]+ '<br>';
+            }
+            infoModal.style.display = 'block'
+            responseMessage.innerHTML = 'Your subscription was successful! Here is your data:';
+            responseMessage.style.color = 'green';
+            responseDetails.innerHTML = output;
+            userDataStorage();
+        })
+        .catch((error) => {
+            infoModal.style.display = 'block'
+            responseMessage.innerHTML = 'There was an error in your subscription: '
+            responseMessage.style.color = 'red';
+            responseDetails.innerHTML = error;
+        })
+    } else {
+        var output = '';
+        for (var property in formErrors) {
+            output += property + ': ' + formErrors[property]+ '<br>';
+        }
+        infoModal.style.display = 'block'
+        responseMessage.innerHTML = 'You should complete all of your fields';
+        responseMessage.style.color = 'red';
+        responseDetails.innerHTML = output;
+    }
+};
+
+button.addEventListener('click', modalMessage);
+
+// Onload localStorage verification
+var checkLocalStorage = function () {
+    formName.value = !!localStorage.getItem('name') ? localStorage.getItem('name') : null;
+    formEmail.value = !!localStorage.getItem('email') ? localStorage.getItem('email') : null;
+    formPassword.value = !!localStorage.getItem('password') ? localStorage.getItem('password') : null;
+    formRepeatPassword.value = !!localStorage.getItem('confirm-password') ? localStorage.getItem('confirm-password') : null;
+    formAge.value = !!localStorage.getItem('age') ? localStorage.getItem('age') : null;
+    formPhoneNumber.value = !!localStorage.getItem('phone-number') ? localStorage.getItem('phone-number') : null;
+    formAddress.value = !!localStorage.getItem('address') ? localStorage.getItem('address') : null;
+    formCity.value = !!localStorage.getItem('city') ? localStorage.getItem('city') : null;
+    formZipCode.value = !!localStorage.getItem('zip-code') ? localStorage.getItem('zip-code') : null;
+    formIDNumber.value = !!localStorage.getItem('id-number') ? localStorage.getItem('id-number') : null;
+};
+window.onload = checkLocalStorage;
+ */
+
+ //weekly problem 6:
+ const url = "https://curso-dev-2021.herokuapp.com/newsletter?";
+
+function makeFullUri() {
+	let urlParams = "";
+	const fullNameValue = formName.value;
+	const emailValue = formEmail.value;
+	const passwordValue = formPassword.value;
+	const confirmPasswordValue = formRepeatPassword.value;
+	const ageValue = formAge.value;
+	const phoneNumberValue = formPhoneNumber.value;
+	const addressValue = formAddress.value;
+	const cityValue = formCity.value;
+	const postalCodeValue = formZipCode.value;
+	const dniValue = formIDNumber.value;
+
+	urlParams +=
+		"name="+fullNameValue+
+		"&email="+emailValue+
+		"&password="+passwordValue+
+		"&confirm_password="+confirmPasswordValue+
+		"&age="+ageValue+
+		"&phone_number="+phoneNumberValue+
+		"&address="+addressValue+
+		"&city="+cityValue+
+		"&postal_code="+postalCodeValue+
+		"&dni="+dniValue;
+
+	return encodeURI (url+urlParams);
+}
+function sendForm(){
+	fetch(makeFullUri())
+		.then(function (response){
+			return response.json();
+		})
+		.then(function(data){
+			createSuccessMessage(data);
+			localStorage.setItem("user_data",JSON.stringify(data))
+		})
+		.catch(function(err) {
+			//console.log("The error is:",err);
+			modalMessage(err, "The subscription failed.")
+		})
+}
+function createSuccessMessage(values) {
+	const stringData=
+	"<p>Name: "+values.name+"</p>"+
+	"<p>Email: "+values.email+"</p>"+
+	"<p>Password: "+values.password+"</p>"+
+	"<p>Confirm Password: "+values.confirm_password+"</p>"+
+	"<p>Age: "+values.age+"</p>"+
+	"<p>Phone Number: "+values.phone_number+"</p>"+
+	"<p>Address: "+values.address+"</p>"+
+	"<p>City: "+values.city+"</p>"+
+	"<p>Postal Code: "+values.postal_code+"</p>"+
+	"<p>Dni: "+values.dni+"</p>";
+	modalMessage(stringData, "You are subscribed to our newsletter now!");
+}
+const modalCloseButton = document.querySelector(".modal-button")
+	modalCloseButton.addEventListener("click", function(){
+		document.querySelector(".modal-container").classList.add("pop-up")
+	})
+    function modalMessage(message,titlemessage) {
+        document.getElementById("modal-message").innerHTML= message
+        document.getElementById("modal-title").innerHTML= titlemessage
+        document.querySelector(".modal-container").classList.remove("pop-up")
+    }
+    var checkLocalStorage = function () {
+        formName.value = !!localStorage.getItem('name') ? localStorage.getItem('name') : null;
+        formEmail.value = !!localStorage.getItem('email') ? localStorage.getItem('email') : null;
+        formPassword.value = !!localStorage.getItem('password') ? localStorage.getItem('password') : null;
+        formRepeatPassword.value = !!localStorage.getItem('confirm-password') ? localStorage.getItem('confirm-password') : null;
+        formAge.value = !!localStorage.getItem('age') ? localStorage.getItem('age') : null;
+        formPhoneNumber.value = !!localStorage.getItem('phone-number') ? localStorage.getItem('phone-number') : null;
+        formAddress.value = !!localStorage.getItem('address') ? localStorage.getItem('address') : null;
+        formCity.value = !!localStorage.getItem('city') ? localStorage.getItem('city') : null;
+        formZipCode.value = !!localStorage.getItem('zip-code') ? localStorage.getItem('zip-code') : null;
+        formIDNumber.value = !!localStorage.getItem('id-number') ? localStorage.getItem('id-number') : null;
+    };
+    window.onload = checkLocalStorage;
+    /*
+    window.addEventListener("load", function() {
+        const userData = JSON.parse(localStorage.getItem("user_data"))
+        if(userData != null){
+            formName.value = userData.name;
+            formEmail.value = userData.email;
+            formPassword.value = userData.password;
+            formRepeatPassword.value = userData.password;
+            formAge.value = userData.age;
+            formPhoneNumber.value = userData.phone_number;
+            formAddress.value = userData.address;
+            formCity.value = userData.city;
+            formZipCode.value = userData.postal_code;
+            formIDNumber.value = userData.dni;
+            realTimeText();
+        }
+    })
+    */
  // Bonus
     var hiName = document.getElementById('form-name');
     hiName.addEventListener('keyup',autoCompleteEvent);
@@ -330,4 +618,5 @@ window.onload=function() {
         var headerName = document.getElementById('hello-header');
         headerName.innerHTML = 'Hello ' + valueName + ' !';
     }
+ 
 }

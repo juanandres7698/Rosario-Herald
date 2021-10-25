@@ -8,6 +8,54 @@ header time {
     color: white;
     font-size: 1vw;
 }
+#my-modal {
+    position: fixed;
+    z-index: 1;
+    top: 25%;
+    height: 100%;
+    width:100%; 
+    display: none;
+}
+
+.modal-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: pink;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid navy;
+    border-radius: 5px;
+    width: 45%; 
+    height: 50%;
+
+}
+#modal-title{
+	color: navy;
+	text-align: center;
+	font-size: 3.5vh;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	text-transform: uppercase;
+}
+
+#modal-message{
+	font-size: 2.2vh;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	margin-top: 5%;
+	color: navy;
+	text-align: center;
+	line-height: 1.5;
+}
+#modal-button {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    color: navy;
+    font-weight: bold;
+    cursor: pointer;
+}
 nav a {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-decoration: none;
